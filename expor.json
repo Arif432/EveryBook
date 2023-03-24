@@ -1,0 +1,35 @@
+{
+  "books": [
+    {
+        "desc": "lorem ipsum sdasalisdalksda",
+        "key": 0,
+        "price": 1000,
+        "title": "book1",
+        "type" :"new arrived",
+        "img":""
+      },
+      {
+        "desc": "dasalisdalksda",
+        "key": 1,
+        "price": 2000,
+        "title": "book2",
+        "type" :"our choice",
+        "img":""
+      },
+      {
+        "desc": "lorem ipsum sdasalisdalksda",
+        "key": 3,
+        "price": 3000,
+        "title": "book1",
+        "type" :"best seller",
+        "img":""
+      },
+      {
+        "desc": "dasalisdalksda",
+        "key": 3,
+        "price": 4000,
+        "title": "book4",
+        "img":""
+      }
+  ]
+}
