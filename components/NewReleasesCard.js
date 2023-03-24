@@ -1,9 +1,11 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Icon } from '@rneui/themed'
 import { PricingCard } from '@rneui/themed';
+import LikedButton from './LikedButton';
 
-const NewReleasesCard = ({title ,releaseYear, price ,src}) => {
+const NewReleasesCard = ({title , price ,src ,likes ,id}) => {
+
   return (
     <View className="flex-1">
     <TouchableOpacity 
@@ -26,13 +28,16 @@ const NewReleasesCard = ({title ,releaseYear, price ,src}) => {
                 {/* <StarIcon opacity={0.5} size={20} color="green" className="items-center" /> */}
                 <Text className="text-sm text-gray-500">
                     <Text className="text-[#67B7F4]">4.3</Text> .  
-                    available {releaseYear}
+                    available
                 </Text>
             </View>
 
             <View className="flex-row items-center space-x-1">
                 {/* <MapPinIcon opacity={0.4} size={22} color="gray"/> */}
-                <Text className="text-lg text-[#67B7F4]">Rs {price}</Text>
+                <Text className="text-lg text-[#67B7F4] flex-1">Rs {price}</Text>
+
+                <LikedButton like={likes} id={id}/>
+
             </View>
         </View>
     </TouchableOpacity>
