@@ -14,13 +14,13 @@ const HomeScreen = () => {
         <View>
           <BooksNamesFlatList data={books} title={"Category 1"} description={"desc1"} />
         </View>
-        {/* <View>
-          <BooksNamesFlatList data={books} title={"Category 2"} description={"desc1"}   />
+        <View>
+          <BooksNamesFlatList data={books} title={"Category 2"} description={"desc2"}   />
         </View>
         <View>
-          <BooksNamesFlatList data={books} title={"Category 3"} description={"desc1"}  />
+          <BooksNamesFlatList data={books} title={"Category 3"} description={"desc3"}  />
         </View>
-         */}
+        
       </View>
     </ScrollView>
   );
