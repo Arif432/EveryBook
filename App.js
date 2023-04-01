@@ -3,11 +3,12 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import EntryScreen from './screens/EntryScreen';
-import LoginScreen from './screens/LoginScreen';
-import SignupScreen from './screens/SignupScreen';
+import LoginScreen from './screens/credentialScreens/LoginScreen';
+import SignupScreen from './screens/credentialScreens/SignupScreen';
 import MainScreen from './screens/MainScreen';
-import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
-import ResetPasswordScreen from './screens/ResetPasswordScreen';
+import ForgotPasswordScreen from './screens/credentialScreens/ForgotPasswordScreen';
+import ResetPasswordScreen from './screens/credentialScreens/ResetPasswordScreen';
+
 
 
 const Stack = createNativeStackNavigator();

@@ -1,18 +1,39 @@
 import { View, Text, ScrollView } from 'react-native';
-import React from 'react';
-import NavBarComponent from '../components/NavBarComponent';
-import InputComponent from '../components/InputComponent';
-import PrimaryButtonComponent from '../components/Buttons/PrimaryButtonComponent';
-import SecondaryButtonComponent from '../components/Buttons/SecondaryButtonComponent';
-import usePostApi from '../components/CustomHooks/usePostApi';
+import React, { useState } from 'react';
+import NavBarComponent from '../../components/NavBarComponent';
+import InputComponent from '../../components/input/InputComponent';
+import PrimaryButtonComponent from '../../components/Buttons/PrimaryButtonComponent';
+import SecondaryButtonComponent from '../../components/Buttons/SecondaryButtonComponent';
+// import usePostApi from '../CustomHooks/usePostApi';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 
 const SignupScreen = ({ navigation }) => {
-  const [setEmail, setPassword,setName,postApi] = usePostApi(
-    'http://talk2you-live.lingmo-api.com/api/user'
-  );
+  // const [setEmail, setPassword,setName,postApi] = usePostApi(
+  //   'http://talk2you-live.lingmo-api.com/api/user'
+  // );
+  const [email,setEmail] = useState();
+  const [password,setPassword] = useState();
+  const [name,setName] = useState();
+  const [loginSuccess, setloginSuccess] = useState(true)
+
 
   const handleSignUp = () => {
-    postApi();
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage)
+    // ..
+  });
+
   };
 
   return (
@@ -49,6 +70,7 @@ const SignupScreen = ({ navigation }) => {
           label={'Create Account'}
           screen={'LoginScreen'}
           navigation={navigation}
+          loginSuccess={loginSuccess}
           onPress={handleSignUp}
         />
 

@@ -1,8 +1,8 @@
 import { View, Text ,StatusBar} from 'react-native'
 import React from 'react'
-import NavBarComponent from '../components/NavBarComponent'
-import InputComponent from '../components/InputComponent'
-import PrimaryButtonComponent from '../components/Buttons/PrimaryButtonComponent'
+import NavBarComponent from '../../components/NavBarComponent'
+import InputComponent from '../../components/input/InputComponent'
+import PrimaryButtonComponent from '../../components/Buttons/PrimaryButtonComponent'
 
 const ForgotPasswordScreen = ({navigation}) => {
   return (

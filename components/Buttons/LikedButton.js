@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import React, { useState, useEffect } from 'react';
-import app from './CustomHooks/firebase';
+import app from '../../customHooks/firebase';
 import { ref, getDatabase, update } from 'firebase/database';
 import { Icon } from '@rneui/themed';
 

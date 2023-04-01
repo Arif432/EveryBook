@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
-import NewRelaeasesCard from './NewReleasesCard';
+import NewReleasesCard from './cards/NewReleasesCard';
 import TitleDescription from './TitleDescription';
 
 const BooksNamesFlatList = ({ data ,title, description}) => {
@@ -15,7 +15,7 @@ const BooksNamesFlatList = ({ data ,title, description}) => {
         renderItem={({ item }) => (
           <View>
 
-            <NewRelaeasesCard
+            <NewReleasesCard
             src={item.img}
             title={item.title} 
             price={item.price}

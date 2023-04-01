@@ -1,8 +1,8 @@
 import { ScrollView, View } from 'react-native';
 import React from 'react';
-import InputComponent from '../components/InputComponent';
+import InputComponent from '../components/input/InputComponent';
 import BooksNamesFlatList from '../components/BooksNamesFlatList';
-import GetApiCustomHook from '../components/CustomHooks/GetApiCustomHook';
+import GetApiCustomHook from "../customHooks/GetApiHook"
 
 const HomeScreen = () => {
   const [books] = GetApiCustomHook()
@@ -14,12 +14,12 @@ const HomeScreen = () => {
         <View>
           <BooksNamesFlatList data={books} title={"Category 1"} description={"desc1"} />
         </View>
-        <View>
+        {/* <View>
           <BooksNamesFlatList data={books} title={"Category 2"} description={"desc2"}   />
         </View>
         <View>
           <BooksNamesFlatList data={books} title={"Category 3"} description={"desc3"}  />
-        </View>
+        </View> */}
         
       </View>
     </ScrollView>

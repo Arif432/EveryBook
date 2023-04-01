@@ -2,7 +2,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { Icon } from '@rneui/themed'
 import { PricingCard } from '@rneui/themed';
-import LikedButton from './LikedButton';
+import LikedButton from '../Buttons/LikedButton';
 
 const NewReleasesCard = ({title , price ,src ,likes ,id}) => {
 

@@ -2,8 +2,13 @@ import { View, Text, ImageBackground, TouchableOpacity, StatusBar } from 'react-
 import launchImg from '../assets/background.jpg';
 import PrimaryButtonComponent from '../components/Buttons/PrimaryButtonComponent';
 import SecondaryButtonComponent from '../components/Buttons/SecondaryButtonComponent';
+// import GetApiCustomHook from '../CustomHooks/GetApiCustomHook';
+import { useState } from 'react';
+
 
 const EntryScreen = ({ route, navigation }) => {
+  const [loginSuccess, setloginSuccess] = useState(true)
+
   return (
     <ImageBackground
       resizeMode="cover"
@@ -37,8 +42,17 @@ const EntryScreen = ({ route, navigation }) => {
 
         {/* Buttons Log in and Sign up */}
         <View className="mb-10 p-6">
-          <PrimaryButtonComponent label="LOGIN" navigation={navigation} screen="LoginScreen" />
-          <SecondaryButtonComponent label="SIGNUP" navigation={navigation} border={true} />
+          <PrimaryButtonComponent 
+          label="LOGIN" 
+          navigation={navigation} 
+          loginSuccess={loginSuccess}
+          screen="LoginScreen" />
+         
+          <SecondaryButtonComponent 
+          label="SIGNUP" 
+          navigation={navigation} 
+          border={true} />
+
         </View>
 
       </View>
