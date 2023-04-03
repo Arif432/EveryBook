@@ -12,7 +12,7 @@ const InputComponent = ({placeholder, icon ,password, onChangeText}) => {
         className="ml-2"
         placeholder={placeholder}
         onChangeText={onChangeText}
-        secureTextEntry={password ? true : false}
+        // secureTextEntry={password ? true : false}
         inputContainerStyle={{borderBottomWidth:0}}
 
         leftIcon={
