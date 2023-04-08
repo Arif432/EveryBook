@@ -4,7 +4,7 @@ import InputComponent from '../components/input/InputComponent';
 import BooksNamesFlatList from '../components/BooksNamesFlatList';
 import GetApiCustomHook from "../customHooks/GetApiHook"
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const [books] = GetApiCustomHook()
 
   return (
@@ -12,12 +12,9 @@ const HomeScreen = () => {
       <View className="flex-1">
         <InputComponent icon={"search"} placeholder="search item"/>
         <View>
-          <BooksNamesFlatList data={books} title={"Category 1"} description={"desc1"} />
+          <BooksNamesFlatList data={books} title={"Category 1"} description={"desc1"} navigtion={navigation} />
         </View>
-        {/* <View>
-          <BooksNamesFlatList data={books} title={"Category 2"} description={"desc2"}   />
-        </View>
-        <View>
+        {/* <View> 
           <BooksNamesFlatList data={books} title={"Category 3"} description={"desc3"}  />
         </View> */}
         

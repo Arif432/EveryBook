@@ -8,7 +8,7 @@ import SignupScreen from './screens/credentialScreens/SignupScreen';
 import MainScreen from './screens/MainScreen';
 import ForgotPasswordScreen from './screens/credentialScreens/ForgotPasswordScreen';
 import ResetPasswordScreen from './screens/credentialScreens/ResetPasswordScreen';
-
+import DetailScreen from './screens/DetailScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -53,6 +53,11 @@ export default function App() {
         options={{headerShown: false}}
         component={ResetPasswordScreen} 
         />
+
+        <Stack.Screen name='DetailScreen' 
+        options={{ headerShown: false }} 
+        component={DetailScreen}/>
+
 
 
       </Stack.Navigator>

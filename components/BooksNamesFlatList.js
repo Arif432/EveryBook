@@ -3,7 +3,7 @@ import { View, Text, FlatList } from 'react-native';
 import NewReleasesCard from './cards/NewReleasesCard';
 import TitleDescription from './TitleDescription';
 
-const BooksNamesFlatList = ({ data ,title, description}) => {
+const BooksNamesFlatList = ({navigtion, data ,title, description}) => {
   console.log("data ara ha => ",data);
   return (
     <View>
@@ -16,11 +16,9 @@ const BooksNamesFlatList = ({ data ,title, description}) => {
           <View>
 
             <NewReleasesCard
-            src={item.img}
-            title={item.title} 
-            price={item.price}
-            likes={item.liked}
-            id={item.key}
+            
+            item={item}
+            navigation={navigtion}
             />
           </View>
         )}
