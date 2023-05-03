@@ -6,6 +6,7 @@ import LoginImg from "../../assets/firstImg.jpg"
 import PrimaryButtonComponent from '../../components/Buttons/PrimaryButtonComponent'
 import SecondaryButtonComponent from '../../components/Buttons/SecondaryButtonComponent'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 
 const LoginScreen = ({navigation}) => {
@@ -21,6 +22,12 @@ const LoginScreen = ({navigation}) => {
         // console.log("user",auth.currentUser.uid);
         // Signed in 
         const user = userCredential.user;
+
+        AsyncStorage.setItem("myuser", JSON.stringify(user));
+        // AsyncStorage.getItem('myuser').then((user) => {
+        //   console.log('Stored user information:', JSON.parse(user));
+        // });
+
         setLoginSuccess(true);
         console.log("success", email);
         navigation.navigate("MainScreen")

@@ -1,31 +1,28 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
+import AuthorCard from './cards/AuthorCard';
 import NewReleasesCard from './cards/NewReleasesCard';
 import TitleDescription from './TitleDescription';
 
-const BooksNamesFlatList = ({navigtion, data ,title, description}) => {
-  console.log("data ara ha => ",data);
+const BooksNamesFlatList = ({data,renderItem,title, description}) => {
   return (
     <View>
       <TitleDescription title={title} description={description}/>
-      <FlatList
-      horizontal
-      showsHorizontalScrollIndicator={false}
-        data={data}
-        renderItem={({ item }) => (
-          <View>
 
-            <NewReleasesCard
-            
-            item={item}
-            navigation={navigtion}
-            />
-          </View>
-        )}
+      <FlatList
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        data={data}
+        renderItem={renderItem}
       />
-    </View>
-  );
+      </View>
+    
+    )
   
+};
+BooksNamesFlatList.defaultProps = {
+  data: [],
+  renderItem: () => null,
 };
 
 export default BooksNamesFlatList

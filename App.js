@@ -59,6 +59,7 @@ export default function App() {
         component={DetailScreen}/>
 
 
+      
 
       </Stack.Navigator>
     </NavigationContainer>
