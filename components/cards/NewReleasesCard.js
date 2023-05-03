@@ -6,6 +6,7 @@ import LikedButton from '../Buttons/LikedButton';
 
 const NewReleasesCard = ({ navigation, item }) => {
   const { key, title, price, img} = item;
+  const heading = "Product Details"
 
   const DetailsNav = () => {
     const params = {
@@ -13,6 +14,8 @@ const NewReleasesCard = ({ navigation, item }) => {
       title,
       price,
       img,
+      heading
+
     };
     navigation.navigate('DetailScreen', params);
   };
@@ -21,7 +24,7 @@ const NewReleasesCard = ({ navigation, item }) => {
     <View className="flex-1">
       <TouchableOpacity
         onPress={DetailsNav}
-        className="bg-white shadow-sm mr-3 ml-3 rounded-lg w-52 h-full"
+        className="bg-white shadow-sm mr-3 ml-3 rounded-lg w-52"
       >
         <Image
           className="w-52 h-36 rounded-t-lg"
