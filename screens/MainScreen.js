@@ -13,14 +13,14 @@ import CategoriesScreen from './CategoriesScreen';
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 
-const DrawerScreen = () => {
-  return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={MainScreen} />
-      <Drawer.Screen name="Categories" component={CategoriesScreen} />
-    </Drawer.Navigator>
-  );
-};
+// const DrawerScreen = () => {
+//   return (
+//     <Drawer.Navigator>
+//       <Drawer.Screen name="Home" component={MainScreen} />
+//       <Drawer.Screen name="Categories" component={CategoriesScreen} />
+//     </Drawer.Navigator>
+//   );
+// };
 
 const MainScreen = () => {
   return (
@@ -65,7 +65,13 @@ const MainScreen = () => {
         options={{ headerShown: false }}
         component={HomeScreen}
       />
-      <Tab.Screen name="Categories" component={CategoriesScreen} />
+
+      <Tab.Screen 
+      name="Categories" 
+      options={{ headerShown: false }}
+      component={CategoriesScreen} 
+      />
+
       <Tab.Screen
         name="Cart"
         options={{ tabBarBadge: 3 }}
@@ -75,4 +81,4 @@ const MainScreen = () => {
   );
 };
 
-export default DrawerScreen;
+export default MainScreen;

@@ -6,11 +6,15 @@ import {ref , getDatabase , onValue} from "firebase/database"
 const useGetApiCustomHook = () => {
   const [books, setBooks] = useState([]);
   const [authors ,setAuthors] =useState([])
+  const [genres ,setGenres] =useState([])
+
 
   useEffect(() => {
     const db = getDatabase(app)
     const dbRef = ref(db,"books")
     const authorsRef = ref(db,"authors")
+    const genresRef = ref(db,"genres")
+
 
     onValue(dbRef , (snapshot)=>{
       let data = snapshot.val()
@@ -21,9 +25,14 @@ const useGetApiCustomHook = () => {
       let authors = snapshot.val()
       setAuthors(authors)
     })
+
+    onValue(genresRef, (snapshot)=>{
+      let genres = snapshot.val()
+      setGenres(genres)
+    })
   }, []);
 
-  return [books,authors];
+  return [books,authors,genres];
 };
 
 export default useGetApiCustomHook;
